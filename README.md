@@ -25,3 +25,14 @@ Para executar basta inserir o comando no terminal:
 #### IMC:
 - `./executaveis/imc.exe`
 
+
+## Exemplos de Uso
+
+### Bissexto:
+
+![](./usos/ex_bissexto.png)
+
+### IMC:
+
+![](./usos/ex_imc.png)
+
