@@ -26,10 +26,10 @@ int problema1(long int iNum){
 
 
 int problema2(int iNum){
+
+
+
     
-
-
-
 }
 
 
