@@ -15,7 +15,7 @@ void insertAfter(Node*, int);
 void deleteNode(Node**, Node*);
 void displayList(Node*);
 
-void InsertBefore(Node*, int);
+void insertBefore(Node*, int);
 void deleteNodebyValue(Node**, int);
 Node* searchNodebyValue(Node**, int);
 
@@ -154,10 +154,28 @@ void deleteNode(Node** head, Node* ptrDelete)
 }
 
 
-// Exercício 1. Elaborar a função void InsertBefore(Node*, int);
+// Exercício 1. Elaborar a função void insertBefore(Node*, int);
 // Exercício 2. Elaborar a função void deleteNodebyValue(Node**, int);
 // Exercício 3. Elaborar a função Node* searchNodebyValue(Node**, int);
 
+void insertBefore(Node* ptrLocation, int iPayload) {
+    if (ptrLocation == nullptr) {
+        cout << "Location é NULL." << endl;
+        return;
+    }
+
+    Node* newNode = createNode(iPayload); // Cria um novo nó com o payload fornecido
+
+    // Configura os ponteiros do novo nó para inseri-lo antes de ptrLocation
+    newNode->ptrNext = ptrLocation;
+    newNode->ptrPrev = ptrLocation->ptrPrev;
+
+    // Se o ptrLocation é o primeiro nó da lista
+    if (ptrLocation->ptrPrev != nullptr) {
+        ptrLocation->ptrPrev->ptrNext = newNode; // Atualiza o próximo do anterior para o novo nó
+    }
+    ptrLocation->ptrPrev = newNode; // Atualiza o anterior do ptrLocation para o novo nó
+}
 
 Node* searchNodebyValue(Node** head, int iValue)
 {
@@ -180,16 +198,15 @@ Node* searchNodebyValue(Node** head, int iValue)
     return current;
 }
 
-
 void deleteNodebyValue(Node** head, int iValue)
 {
     // Faz a busca do nó
-    Node* selected = searchNodebyValue(head, iValue);
+    Node* selected = searchNodebyValue(head, iValue); // Aqui usamos a implementação do exercício 3
 
     // Verifica se ele foi encontrado
     if (selected == nullptr) return;
 
     // Por fim, deleta o nó
-    deleteNode(head, selected);
+    deleteNode(head, selected); // Aqui usamos a função já implementada deleteNode
     return;
 }
