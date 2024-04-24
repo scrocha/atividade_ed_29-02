@@ -2,9 +2,10 @@
 
 Repositório para a entrega da atividade de Estrutura de Dados (24/04)
 
-## Integrante
+## Integrantes
 
 - Sillas Rocha da Costa
+- Beatriz Miranda
 
 # Atividade
 
