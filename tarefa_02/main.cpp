@@ -21,19 +21,24 @@ Node* searchNodebyValue(Node**, int);
 
 int main(){
     Node* head = nullptr;
-    displayList(head);
-    cout << "=================================" << endl;
+    // displayList(head);
+    // cout << "=================================" << endl;
     insertEnd(&head, 0);
     insertEnd(&head, 1);
     insertEnd(&head, 2);
     insertEnd(&head, 5);
     insertEnd(&head, 7);
     insertEnd(&head, 42);
-    // displayList(head);   
+    displayList(head);
     // insertFront(&head, 13);
-    // displayList(head);  
+    // displayList(head);
     // deleteNode(&head, head->ptrNext->ptrNext);
-    // displayList(head); 
+    // displayList(head);
+    deleteNodebyValue(&head, 42);
+    deleteNodebyValue(&head, 0);
+    deleteNodebyValue(&head, 45);
+    displayList(head);
+
 }
 
 Node* createNode(int iPayload){
@@ -148,3 +153,38 @@ void deleteNode(Node** head, Node* ptrDelete)
 // Exercício 1. Elaborar a função void InsertBefore(Node*, int);
 // Exercício 2. Elaborar a função void deleteNodebyValue(Node**, int);
 // Exercício 3. Elaborar a função Node* searchNodebyValue(Node**, int);
+
+
+Node* searchNodebyValue(Node** head, int iValue)
+{
+    if (*head == nullptr)
+    {
+        cout << "Fila vazia, não foi possível achar o nó." << endl;
+        return nullptr;
+    }
+
+    Node* current = *head;
+    while (current != nullptr && current->iPayload != iValue) current = current->ptrNext;
+    
+    if (current == nullptr)
+    {
+        cout << "Não foi possível achar o nó de valor " << iValue << "." << endl;
+        return nullptr;
+    }
+
+    return current;
+}
+
+
+void deleteNodebyValue(Node** head, int iValue)
+{
+    Node* selected = searchNodebyValue(head, iValue);
+    
+    if (selected == nullptr)
+    {
+        return;
+    }
+
+    deleteNode(head, selected);
+    return;
+}
