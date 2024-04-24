@@ -11,9 +11,9 @@ Repositório para a entrega da atividade de Estrutura de Dados (24/04)
 
 Implementar as seguintes funções relacionadas a listas encadeadas:
 
-- Exercício 1: Elaborar a função void insertBefore(Node*, int);
-- Exercício 2: Elaborar a função void deleteNodebyValue(Node**, int);
-- Exercício 3: Elaborar a função Node* searchNodebyValue(Node**, int);
+- [Exercício 1: Elaborar a função void insertBefore(Node*, int);](#exercício-1---insertbefore)
+- [Exercício 2: Elaborar a função void deleteNodebyValue(Node**, int);](#exercício-2---deletenodebyvalue)
+- [Exercício 3: Elaborar a função Node* searchNodebyValue(Node**, int);](#exercício-3---searchnodebyvalue)
 
 # Implementações
 
