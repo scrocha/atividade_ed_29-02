@@ -42,12 +42,12 @@ int main(){
     deleteNodebyValue(&head, 7);
     displayList(head);
     cout << "=================================" << endl;
-    cout << "Testando a função de achar valores e inserrir valores no meio da lista:" << endl;
+    cout << "Testando a função de achar valores e inserir valores no meio da lista:" << endl;
     Node* temp = searchNodebyValue(&head, 2);
     insertBefore(temp, 13);
     
     displayList(head);
-
+    return 0;
 }
 
 Node* createNode(int iPayload){
